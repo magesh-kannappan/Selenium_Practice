@@ -9,7 +9,7 @@ public class E1_LocalDriver {
 
 //		System.setProperty("webdriver.http.factory", "jdk-http-client");
 		System.setProperty("webdriver.chrome.driver",
-				"C:/Eclipse/Mini Project/SeleniumPractice/Driver/chromedriver.exe");
+				"C:\\Eclipse Projects\\Selenium Practice\\Driver\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.netmeds.com/");
 

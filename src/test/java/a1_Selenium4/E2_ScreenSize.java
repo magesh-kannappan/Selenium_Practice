@@ -21,5 +21,8 @@ public class E2_ScreenSize {
 		driver.manage().window().maximize();
 		driver.manage().window().fullscreen();
 
+		driver.close();
+		driver.quit();
+
 	}
 }
