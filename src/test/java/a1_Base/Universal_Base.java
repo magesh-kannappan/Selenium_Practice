@@ -1,4 +1,4 @@
-package a1_Universal_Base;
+package a1_Base;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
