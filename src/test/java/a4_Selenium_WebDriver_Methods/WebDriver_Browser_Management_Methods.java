@@ -1,4 +1,4 @@
-package selenium_WebDriver_Methods;
+package a4_Selenium_WebDriver_Methods;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
