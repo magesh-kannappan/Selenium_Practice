@@ -1,10 +1,12 @@
 package a1_Selenium_Practice;
 
 import org.jspecify.annotations.Nullable;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 public class Practice_30_12_24 {
 
@@ -89,6 +91,29 @@ public class Practice_30_12_24 {
 
 			String cssValue = driver.findElement(By.id("color")).getCssValue("background-color");
 			System.out.println(cssValue);
+
+			WebElement size = driver.findElement(By.id("property"));
+			System.out.println(size.getSize());
+
+			WebElement disabledButton = driver.findElement(By.id("isDisabled"));
+			boolean isEnabled = disabledButton.isEnabled();
+			System.out.println(isEnabled);
+
+			WebElement holdBtn = driver.findElement(By.xpath("//button[@id='isDisabled'][@class='button is-primary']"));
+			Actions act = new Actions(driver);
+			act.clickAndHold(holdBtn);
+			act.build().perform();
+
+			driver.navigate().back();
+
+			WebElement dialog = driver.findElement(By.linkText("Dialog"));
+			dialog.click();
+
+			WebElement simpleAlert = driver.findElement(By.id("accept"));
+			simpleAlert.click();
+
+			Alert simpleAert = driver.switchTo().alert();
+			simpleAert.accept();
 
 		} else {
 			System.err.println("Page is not correct");
