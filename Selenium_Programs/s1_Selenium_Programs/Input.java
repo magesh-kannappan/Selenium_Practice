@@ -1,4 +1,4 @@
-package a3_Selenium4;
+package s1_Selenium_Programs;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class E4_Input {
+public class Input {
 
 	public static void main(String[] args) {
 

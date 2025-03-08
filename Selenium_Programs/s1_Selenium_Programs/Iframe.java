@@ -1,4 +1,4 @@
-package a3_Selenium4;
+package s1_Selenium_Programs;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class E7_Iframe {
+public class Iframe {
 
 	public static void main(String[] args) throws InterruptedException {
 

@@ -1,9 +1,9 @@
-package a4_Selenium_WebDriver_Methods;
+package s1_Selenium_Programs;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class WebDriver_Browser_Management_Methods {
+public class Browser_Management_Methods {
 
 	public static void main(String[] args) throws InterruptedException {
 

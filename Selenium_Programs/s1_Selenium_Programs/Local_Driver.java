@@ -1,9 +1,9 @@
-package a3_Selenium4;
+package s1_Selenium_Programs;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class E1_LocalDriver {
+public class Local_Driver {
 
 	public static void main(String[] args) {
 

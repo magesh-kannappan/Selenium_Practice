@@ -1,4 +1,4 @@
-package a3_Selenium4;
+package s1_Selenium_Programs;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class E8_DropDown {
+public class Drop_Down {
 
 	public static void main(String[] args) {
 

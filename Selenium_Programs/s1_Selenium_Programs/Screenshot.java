@@ -1,4 +1,4 @@
-package a3_Selenium4;
+package s1_Selenium_Programs;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.io.FileHandler;
 
-public class E3_Screenshot {
+public class Screenshot {
 
 	public static void main(String[] args) throws IOException {
 

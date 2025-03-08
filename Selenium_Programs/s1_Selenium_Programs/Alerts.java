@@ -1,4 +1,4 @@
-package a3_Selenium4;
+package s1_Selenium_Programs;
 
 import java.time.Duration;
 
@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class E6_Alerts {
+public class Alerts {
 
 	public static void main(String[] args) {
 

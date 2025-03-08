@@ -1,11 +1,11 @@
-package a3_Selenium4;
+package s1_Selenium_Programs;
 
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class E2_ScreenSize {
+public class ScreenSize {
 
 	public static void main(String[] args) {
 

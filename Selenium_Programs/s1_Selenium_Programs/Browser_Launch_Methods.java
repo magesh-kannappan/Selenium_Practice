@@ -1,4 +1,4 @@
-package a5_Browser_Launch_Methods;
+package s1_Selenium_Programs;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
