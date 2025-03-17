@@ -1,17 +1,41 @@
 package s1_Selenium_Practice_March_2024;
 
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.Select;
 
 public class Practice_08_03_25 {
 
-	public static void main(String[] args) throws InterruptedException {
-		selectDropDown();
+	public static void main(String[] args) throws InterruptedException, IOException {
+//		selectDropDown();
+		screenshot();
+	}
+
+	static void screenshot() throws IOException {
+
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://flipkart.com");
+
+		File dest = new File("C:\\Users\\Magesh\\Downloads\\image.png");
+
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		File source = ts.getScreenshotAs(OutputType.FILE);
+
+		//		FileHandler.copy();
+		FileHandler.copy(source, dest);
+		
+		Desktop.getDesktop().open(dest);
+
 	}
 
 	static void selectDropDown() throws InterruptedException {
@@ -20,7 +44,7 @@ public class Practice_08_03_25 {
 		driver.get("https://letcode.in/dropdowns");
 
 		WebElement dropdown = driver.findElement(By.id("fruits"));
-		
+
 		Select drop = new Select(dropdown);
 
 		drop.selectByValue("3");
