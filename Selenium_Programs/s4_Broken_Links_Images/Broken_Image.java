@@ -1,4 +1,4 @@
-package s1_Selenium_Programs;
+package s4_Broken_Links_Images;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class BrokenImage {
+public class Broken_Image {
 
 	public static void main(String[] args) {
 

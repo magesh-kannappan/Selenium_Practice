@@ -1,10 +1,10 @@
-package s1_Selenium_Programs;
+package s1_TextFile_Reader_Writer;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class TextFileReader {
+public class Text_File_Reader {
 
 	public static void main(String[] args) throws IOException {
 

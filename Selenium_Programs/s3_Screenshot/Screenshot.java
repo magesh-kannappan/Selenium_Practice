@@ -1,4 +1,4 @@
-package s1_Selenium_Programs;
+package s3_Screenshot;
 
 import java.io.File;
 import java.io.IOException;

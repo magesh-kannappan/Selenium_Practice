@@ -1,10 +1,10 @@
-package s1_Selenium_Programs;
+package s2_Property_File_Loader;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class PropertyFileLoader {
+public class Property_File_Loader {
 
 	public static void main(String[] args) throws IOException {
 

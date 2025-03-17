@@ -1,4 +1,4 @@
-package s1_Selenium_Programs;
+package s4_Broken_Links_Images;
 
 import java.net.HttpURLConnection;
 import java.net.URL;

@@ -1,4 +1,4 @@
-package s1_Selenium_Programs;
+package s1_TextFile_Reader_Writer;
 
 import java.awt.Desktop;
 import java.io.BufferedWriter;
@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class TextFileWriter {
+public class Text_File_Writer {
 
 	public static void main(String[] args) throws IOException {
 
