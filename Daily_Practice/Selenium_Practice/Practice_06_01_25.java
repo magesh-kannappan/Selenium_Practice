@@ -1,4 +1,4 @@
-package a1_Selenium_Practice;
+package Selenium_Practice;
 
 import java.io.File;
 

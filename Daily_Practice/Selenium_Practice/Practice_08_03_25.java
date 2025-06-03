@@ -1,4 +1,4 @@
-package s1_Selenium_Practice_March_2024;
+package Selenium_Practice;
 
 import java.awt.Desktop;
 import java.io.File;

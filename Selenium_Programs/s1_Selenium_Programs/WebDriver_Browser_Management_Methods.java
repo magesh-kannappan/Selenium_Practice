@@ -1,4 +1,4 @@
-package a4_Selenium_WebDriver_Methods;
+package s1_Selenium_Programs;
 
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
