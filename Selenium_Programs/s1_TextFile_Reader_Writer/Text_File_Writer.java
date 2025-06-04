@@ -8,6 +8,8 @@ import java.io.IOException;
 
 public class Text_File_Writer {
 
+	//
+
 	public static void main(String[] args) throws IOException {
 
 		String filepath = "C:\\Eclipse Projects\\Personal Workspace\\Selenium_Practice\\Write.txt";

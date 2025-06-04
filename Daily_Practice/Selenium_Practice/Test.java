@@ -1,6 +1,7 @@
 package Selenium_Practice;
 
-import java.util.ArrayList;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -10,27 +11,56 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Test {
 
-	public static void main(String[] args) {
+    public static void brokenLinkChecker() {
 
-		WebDriver driver = new ChromeDriver();
-		driver.get("https://practice.expandtesting.com/dynamic-table");
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://practice-automation.com/broken-links/");
+        int totalLinkCount = 0;
+        int brokenLinkCount = 0;
+        int validLinkCount = 0;
 
-//		List<WebElement> tableHeading = driver.findElements(By.tagName("th"));
-		List<WebElement> tableHeading = driver.findElements(By.xpath("//table//th"));
-		ArrayList<String> list = new ArrayList<String>();
+        List<WebElement> allLinks = driver.findElements(By.tagName("a"));
 
-		for (WebElement ele : tableHeading) {
+        for (WebElement link : allLinks) {
+            String domAttribute = link.getDomAttribute("href");
 
-			String names = ele.toString();
-			System.out.println(names);
-			list.add(names);
-		}
+            if (domAttribute != null && !domAttribute.isBlank()) {
+                totalLinkCount++;
+                try {
+                    URL url = new URL(domAttribute);
+                    HttpURLConnection http = (HttpURLConnection) url.openConnection();
+                    http.setConnectTimeout(3000);
+                    http.connect();
 
-		System.out.println(list);
+                    int response = http.getResponseCode();
 
-//		WebElement searchField = driver.findElement(By.xpath("//input[@placeholder='Search']"));
-//		searchField.sendKeys("Antonio");
+                    if (response >= 400) {
+                        System.out.println("❌ Broken link: " + domAttribute);
+                        brokenLinkCount++;
+                    } else {
+                        System.out.println("✅ Valid link: " + domAttribute);
+                        validLinkCount++;
+                    }
 
-	}
+                } catch (Exception e) {
+                    System.out.println("⚠️ Exception while checking link: " + domAttribute);
+                    e.printStackTrace();
+                }
+            } else {
+                System.out.println("⚠️ Skipping null/empty href.");
+            }
+        }
 
+        driver.quit();
+
+        System.out.println("\n=== Link Check Summary ===");
+        System.out.println("Total Links Found: " + allLinks.size());
+        System.out.println("Total Links Tested: " + totalLinkCount);
+        System.out.println("Valid Links: " + validLinkCount);
+        System.out.println("Broken Links: " + brokenLinkCount);
+    }
+
+    public static void main(String[] args) {
+        brokenLinkChecker();
+    }
 }
