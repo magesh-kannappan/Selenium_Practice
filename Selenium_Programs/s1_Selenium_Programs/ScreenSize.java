@@ -2,6 +2,7 @@ package s1_Selenium_Programs;
 
 import java.time.Duration;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -10,6 +11,10 @@ public class ScreenSize {
 	public static void main(String[] args) {
 
 		WebDriver driver = new ChromeDriver();
+
+		Dimension dm = new Dimension(1024, 768);
+		driver.manage().window().setSize(dm);
+
 		driver.manage().window().maximize();
 		driver.get("https://tutorialsninja.com/demo/index.php?route=common/home");
 
