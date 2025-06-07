@@ -1,74 +1,80 @@
 package s1_Selenium_Programs;
 
-import java.time.Duration;
-
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import java.util.ArrayList;
+import java.util.ListIterator;
 
 public class Alerts {
 
 	public static void main(String[] args) {
 
-		WebDriver driver = new ChromeDriver();
-		driver.get("https://letcode.in/alert");
+		ArrayList list = new ArrayList();
 
-		WebElement simpleAlert = driver.findElement(By.cssSelector("button#accept"));
-		simpleAlert.click();
+		list.add("Audi");
+		list.add("Benz");
+		list.add("Bugatti");
+		list.add("Aston martin");
 
-		Alert simpleAlertac = driver.switchTo().alert();
+		ListIterator<String> listIterator = list.listIterator();
 
-		try {
-			Thread.sleep(2000);
-		} catch (Exception e) {
-			e.printStackTrace();
+		while (listIterator.hasNext()) {
+			System.out.println(listIterator.next());
 		}
-
-		simpleAlertac.accept();
-
-		// ----------------------------------------------------------
-
-		WebElement confirmAlert = driver.findElement(By.xpath("//button[text()='Confirm Alert']"));
-		confirmAlert.click();
-
-		Alert confirmAccept = driver.switchTo().alert();
-
-		try {
-			Thread.sleep(2000);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		confirmAccept.dismiss();
-
-		// ----------------------------------------------------------
-
-		driver.navigate().refresh();
-
-		try {
-			Thread.sleep(2000);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.visibilityOf(confirmAlert));
-
-		confirmAlert.click();
-
-		try {
-			Thread.sleep(2000);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		Alert confirmDismiss = driver.switchTo().alert();
-
-		confirmDismiss.accept();
+		//
+		//		WebDriver driver = new ChromeDriver();
+		//		driver.get("https://letcode.in/alert");
+		//
+		//		WebElement simpleAlert = driver.findElement(By.cssSelector("button#accept"));
+		//		simpleAlert.click();
+		//
+		//		Alert simpleAlertac = driver.switchTo().alert();
+		//
+		//		try {
+		//			Thread.sleep(2000);
+		//		} catch (Exception e) {
+		//			e.printStackTrace();
+		//		}
+		//
+		//		simpleAlertac.accept();
+		//
+		//		// ----------------------------------------------------------
+		//
+		//		WebElement confirmAlert = driver.findElement(By.xpath("//button[text()='Confirm Alert']"));
+		//		confirmAlert.click();
+		//
+		//		Alert confirmAccept = driver.switchTo().alert();
+		//
+		//		try {
+		//			Thread.sleep(2000);
+		//		} catch (Exception e) {
+		//			e.printStackTrace();
+		//		}
+		//
+		//		confirmAccept.dismiss();
+		//
+		//		// ----------------------------------------------------------
+		//
+		//		driver.navigate().refresh();
+		//
+		//		try {
+		//			Thread.sleep(2000);
+		//		} catch (Exception e) {
+		//			e.printStackTrace();
+		//		}
+		//
+		//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		//		wait.until(ExpectedConditions.visibilityOf(confirmAlert));
+		//
+		//		confirmAlert.click();
+		//
+		//		try {
+		//			Thread.sleep(2000);
+		//		} catch (Exception e) {
+		//			e.printStackTrace();
+		//		}
+		//
+		//		Alert confirmDismiss = driver.switchTo().alert();
+		//
+		//		confirmDismiss.accept();
 
 	}
 
