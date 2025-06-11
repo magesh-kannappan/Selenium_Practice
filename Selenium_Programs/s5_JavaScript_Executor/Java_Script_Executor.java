@@ -15,6 +15,8 @@ public class Java_Script_Executor {
 	public static void main(String[] args) {
 
 		WebDriver driver = new ChromeDriver();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.open()");
 		driver.get("https://letcode.in/button");
 		driver.manage().window().maximize();
 
@@ -25,18 +27,15 @@ public class Java_Script_Executor {
 		wait.until(ExpectedConditions.visibilityOf(miniCartBtn));
 		wait.until(ExpectedConditions.elementToBeClickable(miniCartBtn));
 
-		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", miniCartBtn);
 
 		String pageTitle = driver.getTitle();
 		String actualTitle = "LetCode with Koushik";
-		
-		
 
 		if (pageTitle.equals(actualTitle)) {
 			js.executeScript("arguments[0].scrollIntoView(true);", name);
 			System.out.println("Executed");
-//			driver.close();
+			//			driver.close();
 		} else {
 			System.out.println("Error");
 		}
