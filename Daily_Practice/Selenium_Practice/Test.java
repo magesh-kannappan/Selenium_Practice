@@ -1,11 +1,14 @@
 package Selenium_Practice;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,7 +16,41 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Test {
 
 	public static void main(String[] args) throws Exception {
-		brokenImageCheck();
+		textFileReader();
+	}
+
+	public static void textFileReader() throws IOException {
+
+		String filePath = "C:\\Eclipse Projects\\Personal Workspace\\Selenium_Practice\\Read2.txt";
+		FileReader reader = new FileReader(filePath);
+		BufferedReader buffer = new BufferedReader(reader);
+		String line;
+
+		if ((line = buffer.readLine()) != null) {
+
+			System.out.println(line);
+
+		}
+
+	}
+
+	public static void windowResize() {
+
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://netmeds.com");
+		driver.manage().window().maximize();
+
+		WebElement element = driver.findElement(By.xpath("//a[contains(text(), 'Customers Speak')]"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].ScrollIntoView(True)", element);
+		js.executeScript("arguments[0].click", element);
+
+		// driver.switchTo().newWindow(WindowType.TAB);
+		// JavascriptExecutor js = (JavascriptExecutor) driver;
+		// js.executeScript("window.open();");
+		// Dimension dm = new Dimension(1234, 122);
+		// driver.manage().window().setSize(dm);
+
 	}
 
 	public static void brokenImageCheck() throws IOException {
@@ -34,21 +71,21 @@ public class Test {
 			System.out.println(totalLinkCount);
 			System.out.println(hrefAtt);
 
-			//			URL url = new URL(hrefAtt);
-			//			HttpURLConnection http = (HttpURLConnection) url.openConnection();
-			//			http.setConnectTimeout(3000);
-			//			http.connect();
-			//			int res = http.getResponseCode();
-			//			if (res >= 400) {
-			//				brokenLinkCount++;
+			// URL url = new URL(hrefAtt);
+			// HttpURLConnection http = (HttpURLConnection) url.openConnection();
+			// http.setConnectTimeout(3000);
+			// http.connect();
+			// int res = http.getResponseCode();
+			// if (res >= 400) {
+			// brokenLinkCount++;
 			//
-			//			} else {
-			//				goodLinkCount++;
+			// } else {
+			// goodLinkCount++;
 			//
-			//			}
+			// }
 		}
-		//		System.err.println("Broken Links count- " + brokenLinkCount);
-		//		System.out.println("Good Links count " + goodLinkCount);
+		// System.err.println("Broken Links count- " + brokenLinkCount);
+		// System.out.println("Good Links count " + goodLinkCount);
 	}
 
 	public static void brokenLinkChecker() {
