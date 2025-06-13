@@ -17,8 +17,6 @@ public class ExcelFileReader {
 		XSSFWorkbook workbook = new XSSFWorkbook(fis);
 		XSSFSheet sheet = workbook.getSheetAt(0);
 
-		Header header = sheet.getHeader();
-		System.out.println(header);
 		for (Row row : sheet) {
 			for (Cell cell : row) {
 

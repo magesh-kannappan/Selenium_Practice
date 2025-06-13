@@ -1,22 +1,108 @@
 package Selenium_Practice;
 
+import java.awt.Desktop;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
+import java.util.Properties;
+import java.util.Scanner;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Test {
 
 	public static void main(String[] args) throws Exception {
-		textFileReader();
+		// fileReader();
+		propReader();
+	}
+
+	public static void ScannerPrac() {
+
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter your name: ");
+		String name = scan.nextLine();
+		System.out.println(name);
+
+		System.out.println("Enter your name: ");
+		int age = scan.nextInt();
+		System.out.println(age);
+		
+
+	}
+
+	public static void propReader() throws Exception {
+
+		String file = "C:\\Eclipse Projects\\Personal Workspace\\Selenium_Practice\\config.properties";
+		FileInputStream fis = new FileInputStream(file);
+		Properties prop = new Properties();
+		prop.load(fis);
+
+		String name = prop.getProperty("name");
+		System.out.println(name);
+		fis.close();
+	}
+
+	public static void TextFileReader() throws Exception {
+
+		String path = "C:\\Eclipse Projects\\Personal Workspace\\Selenium_Practice\\Read2.txt";
+		File file = new File(path);
+
+		// FileInputStream fis = new FileInputStream(path);
+		FileReader read = new FileReader(path);
+		BufferedReader buffer = new BufferedReader(read);
+		String line;
+
+		while ((line = buffer.readLine()) != null) {
+			System.out.println(line);
+		}
+
+		Desktop.getDesktop().open(file);
+	}
+
+	public static void fileReader() throws Exception {
+
+		String filePath = "C:\\Eclipse Projects\\Personal Workspace\\Selenium_Practice\\Write.txt";
+		File file = new File(filePath);
+		FileWriter write = new FileWriter(filePath);
+		BufferedWriter buffer = new BufferedWriter(write);
+		buffer.write("Santhosh Khan");
+		buffer.close();
+
+		Desktop.getDesktop().open(file);
+	}
+
+	public static void alertCheck() {
+
+		ChromeOptions option = new ChromeOptions();
+		option.addArguments("--start-maximized");
+		option.addArguments("--disable-notifications");
+
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://letcode.in/alert");
+
+	}
+
+	public static void fileWriter() throws Exception {
+		String filePath = "C:\\Eclipse Projects\\Personal Workspace\\Selenium_Practice\\Read2.txt";
+		File file = new File(filePath);
+		FileWriter fileWriter = new FileWriter(filePath);
+		BufferedWriter buffer = new BufferedWriter(fileWriter);
+		buffer.write("Magesh");
+		buffer.close();
+
+		Desktop.getDesktop().open(file);
 	}
 
 	public static void textFileReader() throws IOException {
