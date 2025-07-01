@@ -27,6 +27,10 @@ public class Test {
 		// fileReader();
 		propReader();
 	}
+	
+	
+	
+	
 
 	public static void ScannerPrac() {
 
